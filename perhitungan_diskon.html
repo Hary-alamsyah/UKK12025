@@ -12,7 +12,16 @@
 	<div class="card">
 		<h1>Discount Calculator</h1>
 		<form  action="#">
-			<div class="input-item">
+				 <div class="input-item">
+      				  <label for="discount-percentage">Pilih Nama Item</label>
+       				  <select type="Nama Item" id="discount Item">
+         			 <option value="Pilih Item">Pilih Item</option>
+        			  <option value="Item">Realme</option>
+        			  <option value="Item">Oppo</option>
+         			 <option value="Item">Vivo</option>
+          			<option value="Itel">Itel</option>
+       				 </select>
+   			   </div>
 				<label for="amount"> Enter bill amount: </label>
 				<input type="text" id="amount">
 			</div>
@@ -40,6 +49,21 @@
 
 			<button type="submit" class="calculate">Calculate</button>
 			<input type="reset" value="Reset" class="reset">
+	<h1>Keterangan Pembayaran</h1>
+        <div class="input-item">
+        <label for="potongan"> Discount amount: </label>
+        <input type="text" id="potongan" disabled>
+      </div>
+
+      <div class="input-item">
+        <label for="hasil" aria-disabled="true"> Final Pay:</label>
+        <input type="text" id="hasil" disabled>
+      </div>
+           <h1><div><button onclick="window.print()"> Print </button></div></h1>
+    </form>
+  </div>
+</body>
+</html>
 		</form>
 	</div>
 </body>
