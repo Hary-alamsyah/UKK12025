@@ -1,58 +1,46 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penghitung Diskon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        input, button {
-            margin: 5px 0;
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style.css">
+	<script src="main.js" defer></script>
+	<title>Discount Calculator</title>
 </head>
 <body>
+	<div class="card">
+		<h1>Discount Calculator</h1>
+		<form  action="#">
+			<div class="input-item">
+				<label for="amount"> Enter bill amount: </label>
+				<input type="text" id="amount">
+			</div>
+			
+			<div class="input-item">
+				<label for="discount-percentage">Select discount %</label>
+				<select name="percentage" id="discount-percentage">
+					<option value="0">0</option>
+					<option value="10">10</option>
+					<option value="15">15</option>
+					<option value="20">20</option>
+					<option value="25">25</option>
+				</select>
+			</div>
 
-    <h1>Aplikasi Penghitung Diskon</h1>
-     <div class="input-item">
-        <label for="discount-percentage">Pilih Nama Item</label>
-        <select type="Nama Item" id="discount Item">
-          <option value="Pilih Item">Pilih Item</option>
-          <option value="Item">Realme</option>
-          <option value="Item">Oppo</option>
-          <option value="Item">Vivo</option>
-          <option value="Itel">Itel</option>
-        </select>
-      </div>
-    <label for="harga">Harga Asli:</label>
-    <input type="number" id="harga" placeholder="Masukkan harga asli" required>
-    
-    <label for="diskon">Persentase Diskon (%):</label>
-    <input type="number" id="diskon" placeholder="Masukkan persentase diskon" required>
-    
-    <button onclick="hitungDiskon()">Hitung Diskon</button>
-    
-    <h2 id="hasil"></h2>
+			<div class="input-item">
+				<label for="discount-amount"> Discount amount: </label>
+				<input type="text" id="discount-amount" disabled>
+			</div>
 
-    <script>
-        function hitungDiskon() {
-            const harga = parseFloat(document.getElementById('harga').value);
-            const diskon = parseFloat(document.getElementById('diskon').value);
-            
-            if (isNaN(harga) || isNaN(diskon)) {
-                document.getElementById('hasil').innerText = "Silakan masukkan nilai yang valid.";
-                return;
-            }
-            
-            const totalDiskon = harga * (diskon / 100);
-            const hargaSetelahDiskon = harga - totalDiskon;
-            
-            document.getElementById('hasil').innerText = `Harga setelah diskon: Rp ${hargaSetelahDiskon.toFixed(2)}`;
-        }
-    </script>
+			<div class="input-item">
+				<label for="pay" aria-disabled="true"> Final Pay:</label>
+				<input type="text" id="pay" disabled>
+			</div>
 
+			<button type="submit" class="calculate">Calculate</button>
+			<input type="reset" value="Reset" class="reset">
+		</form>
+	</div>
 </body>
 </html>
